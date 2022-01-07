@@ -1,0 +1,473 @@
+.container {
+    background-color: #fafafa;
+    font-family: monospace;
+    color: #4b4a47;
+    position: relative;
+}
+
+.boxGreen {
+    width: 995px;
+    height: 300px;
+    background-color: #00c17b;
+    position: relative;
+}
+
+.boxGreen p {
+    padding-top: 50px;
+    padding-left: 140px;
+    font-size: 2em;
+    font-weight: bold;
+    color: #fdfefd;
+}
+
+.boxGreenButton {
+    position: absolute;
+    top: 58px;
+    right: 140px;
+    
+}
+
+.boxGreenButton button {
+    margin-left: 10px;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 100%;
+    background-color: #00c17b;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
+    font-family: inherit;
+    color: #fefefe;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boxGreenButton img {
+    margin-left: 10px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 100%;
+    background-color: #00c17b;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
+    font-family: inherit;
+    color: #fefefe;
+    font-size: 1.5em;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.boxGreenButton button:hover {
+    opacity: 0.9;
+}
+
+.boxMainInfo {
+    width: 715px;
+    height: 315px;
+    background-color: #fefefe;
+    position: absolute;
+    left: 140px;
+    top: 150px;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
+
+}
+
+.boxMainInfo img {
+    height: 315px;
+}
+
+.textInfo {
+    width: 450px;
+    position: absolute;
+    top: 25px;
+    left: 250px;
+}
+
+.textInfo h1 {
+    margin-bottom: -15px;
+}
+
+.textInfo h2 {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #4b4a47 ;
+}
+
+.textInfo h1 strong {
+    color: #00c17b;
+}
+
+.buttomBox {
+    width: 479px;
+    height: 60px;
+    background-color: #00c17b;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    font-family: inherit;
+}
+
+.buttomBox button {
+    margin-top: 8px;
+    margin-left: 20px;
+    width: 45px;
+    height: 45px;
+    border-radius: 100%;
+    border: none;
+}
+
+.buttomBox button:hover {
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
+  cursor: pointer;  
+}
+
+.facebook {
+    background: url('./assets/facebook-logo-1.png') no-repeat 50%;
+
+}
+
+.twitter {
+    background: url('./assets/twitter-logo-1.png') no-repeat 50%;
+
+}
+
+.google {
+    background: url('./assets/google-logo-1.png') no-repeat 50%;
+
+}
+
+.linkedin {
+    background: url('./assets/linkedin-logo-1.png') no-repeat 50%;
+
+}
+
+.github {
+    background: url('./assets/github-logo-1.png') no-repeat 50%;
+
+}
+
+.skype {
+    background: url('./assets/skype-logo-1.png') no-repeat 50%;
+
+}
+
+.table {
+    width: 100%;
+    color: #4b4a47;
+    
+}
+
+.table td {
+    padding-bottom: 6px;
+
+}
+
+.table td:nth-child(1)
+{
+    font-weight: bold;
+}
+
+a {
+    color: #4b4a47;
+    text-decoration: none;
+}
+
+.table a:hover {
+    text-decoration: underline;
+}
+
+.table a:active {
+    color: blue;
+}
+
+.table a:visited {
+    /* color: grey; */
+    color: #4b4a47;
+}
+
+
+.boxGray {
+    width: 995px;
+    height: auto;
+    background-color: #e6e6e6;
+    font-family: inherit;
+}
+
+.skillsTitle {
+    padding-top: 215px;
+    text-align: center;
+    font-family: inherit;
+    font-size: 2em;
+    font-weight: bold;
+    color: #00c17b;
+}
+
+.boxSkills {
+    width: 715px;
+    height: 315px;
+    background-color: #fefefe;
+    margin-left: 140px;
+    margin-top: 50px;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
+
+}
+
+.flex-container {
+    width: 100%;
+    height: 315px;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  
+.leftSide {
+    height: 315px;
+    flex-grow: 1;
+    width: 357px;
+  }
+
+.leftSide p {
+    padding-top: 3px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: justify;
+    font-family: inherit;
+    color: #4b4a47;
+
+  }
+  
+.rightSide {
+    height: 315px;
+    flex-grow: 1;
+    width: 357px;
+    margin-right: 10px;
+    position: relative;
+  }
+
+.scale-flex-container {
+    width: 100%;
+    height: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+  }
+  
+.first10 {
+    background: #00c17b;
+    height: 5px;
+    flex-grow: 1;
+  }
+
+.first20 {
+    background: #00c17b;
+    height: 5px;
+    flex-grow: 2;
+  }
+
+.first30 {
+    background: #00c17b;
+    height: 5px;
+    flex-grow: 3;
+  }
+
+.first50 {
+    background: #00c17b;
+    height: 5px;
+    flex-grow: 5;
+  }
+
+.second50 {
+    background: rgba(75, 74, 71, 0.3);
+    height: 5px;
+    flex-grow: 5;
+  }
+
+.second70 {
+    background: rgba(75, 74, 71, 0.3);
+    height: 5px;
+    flex-grow: 7;
+  }
+
+.second80 {
+    background: rgba(75, 74, 71, 0.3);
+    height: 5px;
+    flex-grow: 8;
+  }
+
+.second90 {
+    background: rgba(75, 74, 71, 0.3);
+    height: 5px;
+    flex-grow: 9;
+  }
+
+
+.tableSkills {
+    width: 100%;
+    color: #4b4a47;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);  
+}
+
+.tableSkills td {
+    padding-bottom: 15px;
+
+}
+
+.tableSkills td:nth-child(1)
+{
+    font-weight: bold;
+}
+
+.tableSkills td:nth-child(2)
+{
+    font-weight: bold;
+}
+
+.educationTitle {
+    padding-top: 45px;
+    text-align: center;
+    font-family: inherit;
+    font-size: 2em;
+    font-weight: bold;
+    color: #00c17b;
+    margin-bottom: 40px;
+}
+
+.educationLine {
+    width: 8px;
+    height: 450px;
+    background-color: #fefefe;
+    border: 1px solid rgba(75, 74, 71, 0.4);;
+    border-radius: 20%;
+    margin: 0 auto;
+    margin-bottom: 10px;
+    position: relative;
+    font-style: inherit;
+
+}
+
+.circleGreen {
+    width: 15px;
+    height: 15px;
+    border-radius: 100%;
+    border: none;
+    background-color: #00c17b;
+    position: absolute;
+    
+}
+
+.triangleRight {
+    border: 20px solid transparent; 
+    border-left: 20px solid #fefefe;
+}
+
+.triangleLeft {
+    border: 20px solid transparent; 
+    border-right: 20px solid #fefefe;
+}
+
+.triangleUp {
+    border: 20px solid transparent; 
+    border-right: 20px solid #fefefe; 
+    border-bottom: 20px solid #fefefe;
+}
+
+.triangleDown {
+    border: 20px solid transparent; 
+    border-top: 20px solid #fefefe; 
+    border-right: 20px solid #fefefe;
+}
+
+.educationBlockLeft {
+    background: #fefefe;
+    position: relative;
+    width: 330px; 
+    height: 150px;
+    margin-left: -356px;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
+    font-style: inherit;
+}
+
+.educationBlockLeft::after {
+    content: ''; 
+    position: absolute;
+    right: -40px; top: 15px;
+    border: 20px solid transparent; 
+    border-left: 20px solid #fefefe;
+}
+
+.educationBlockRight {
+    background: #fefefe;
+    position: relative;
+    width: 330px; 
+    height: 150px;
+    margin-left: 34px;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
+
+}
+
+.educationBlockRight::after {
+    content: ''; 
+    position: absolute;
+    right: 330px; top: 15px;
+    border: 20px solid transparent; 
+    border-right: 20px solid #fefefe;
+    
+}
+
+.educationBlockLeft h2, .educationBlockRight h2  {
+    color: #00c17b;
+    text-align: center;
+    margin-top: 0;
+    padding-top: 5px;
+}
+
+.educationBlockLeft h3, .educationBlockRight h3 {
+    color: #4b4a47;
+    text-align: center;
+}
+
+
+.yearsBlockUpRight {
+    background: #00c17b;
+    position: relative;
+    width: 100px; 
+    height: 30px;
+    margin-left: 20px;
+    font-style: inherit;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
+
+}
+
+.yearsBlockUpRight::after {
+    content: ''; 
+    position: absolute;
+    right: 0px; top: -10px;
+    border: 5px solid transparent; 
+    border-right: 5px solid #00c17b; 
+    border-bottom: 5px solid #00c17b;
+}
+
+.helloBlockDownRight {
+    background: #00c17b;
+    position: relative;
+    width: 180px; 
+    height: 20px;
+    margin-left: 285px;
+    margin-top: -320px;
+    font-style: inherit;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
+
+}
+.helloBlockDownRight::after {
+    content: ''; 
+    position: absolute;
+    right: 0px; top: 20px;
+    border: 5px solid transparent; 
+    border-top: 5px solid #00c17b; 
+    border-right: 5px solid #00c17b;
+}
+
+.yearsBlockUpRight h3, .helloBlockDownRight h3 {
+    color: #fdfefd;
+    text-align: center;
+    padding-top: 5px;
+}
