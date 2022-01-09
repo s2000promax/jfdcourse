@@ -1,20 +1,39 @@
+* {
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    margin-top: 0;
+    display: block;
+}
+
 .container {
+    
     background-color: #fafafa;
     font-family: monospace;
     color: #4b4a47;
     position: relative;
 }
 
+
 .boxGreen {
-    width: 995px;
+    /* width: 995px; */
+    width: 100%;
+    min-width: 350px;
     height: 300px;
     background-color: #00c17b;
     position: relative;
 }
 
 .boxGreen p {
-    padding-top: 50px;
-    padding-left: 140px;
+    position: absolute;
+    width: 300px;
+    top: 50px;
+    left: 50%;
+    /* padding-left: 140px; */
+    transform: translateX(-120%);  
+
     font-size: 2em;
     font-weight: bold;
     color: #fdfefd;
@@ -22,9 +41,10 @@
 
 .boxGreenButton {
     position: absolute;
+    width: 340px;
     top: 58px;
-    right: 140px;
-    
+    left: 50%;
+    transform: translateX(5%);
 }
 
 .boxGreenButton button {
@@ -39,26 +59,15 @@
     color: #fefefe;
     font-size: 1.2em;
     font-weight: bold;
+    opacity: 1;
     cursor: pointer;
+    transition: all 300ms ease-in-out; 
 }
 
-.boxGreenButton img {
-    margin-left: 10px;
-    width: 45px;
-    height: 45px;
-    border: none;
-    border-radius: 100%;
-    background-color: #00c17b;
-    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
-    font-family: inherit;
-    color: #fefefe;
-    font-size: 1.5em;
-    font-weight: bold;
-    cursor: pointer;
-}
 
 .boxGreenButton button:hover {
-    opacity: 0.9;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.6);
+    opacity: 0.6;
 }
 
 .boxMainInfo {
@@ -66,10 +75,11 @@
     height: 315px;
     background-color: #fefefe;
     position: absolute;
-    left: 140px;
+    /* left: 140px; */
+    left: 50%;
     top: 150px;
-    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
-
+    transform: translateX(-50%);  
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);
 }
 
 .boxMainInfo img {
@@ -79,12 +89,12 @@
 .textInfo {
     width: 450px;
     position: absolute;
-    top: 25px;
+    top: 45px;
     left: 250px;
 }
 
 .textInfo h1 {
-    margin-bottom: -15px;
+    margin-bottom: 5px;
 }
 
 .textInfo h2 {
@@ -113,11 +123,12 @@
     height: 45px;
     border-radius: 100%;
     border: none;
+    transition: all 300ms ease-in-out; 
 }
 
 .buttomBox button:hover {
-    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
-  cursor: pointer;  
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);
+    cursor: pointer;  
 }
 
 .facebook {
@@ -169,10 +180,12 @@
 a {
     color: #4b4a47;
     text-decoration: none;
+    transition: all 400ms linear;
 }
 
 .table a:hover {
     text-decoration: underline;
+    text-shadow: 0 0 10px yellowgreen,0 0 20px yellowgreen,0 0 30px yellowgreen,0 0 40px yellowgreen;
 }
 
 .table a:active {
@@ -186,29 +199,38 @@ a {
 
 
 .boxGray {
-    width: 995px;
+   padding-top: 215px;
+    /* width: 995px; */
+    width: 100%;
+    min-width: 350px;
     height: auto;
     background-color: #e6e6e6;
     font-family: inherit;
 }
 
 .skillsTitle {
-    padding-top: 215px;
-    text-align: center;
+    text-align: center; 
     font-family: inherit;
     font-size: 2em;
     font-weight: bold;
     color: #00c17b;
+
 }
+
+
+.skillsTitle:hover ~ .boxSkills {
+    border: 1px solid rgba(75, 74, 71, 0.4);
+}
+
 
 .boxSkills {
     width: 715px;
     height: 315px;
     background-color: #fefefe;
-    margin-left: 140px;
+    margin: 0 auto; 
     margin-top: 50px;
-    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
-
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);
+    transition: all 300ms ease-out;
 }
 
 .flex-container {
@@ -225,7 +247,7 @@ a {
   }
 
 .leftSide p {
-    padding-top: 3px;
+    padding-top: 15px;
     padding-left: 15px;
     padding-right: 15px;
     text-align: justify;
@@ -248,52 +270,69 @@ a {
     display: flex;
     flex-flow: row nowrap;
   }
+
+.scale-flex-container:before {
+	content:'';
+	position: absolute;
+	top: 10;
+	left: 0;
+	width: 0;
+	height: 10px;
+	background: rgba(255,255,255,0.2);
+    box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
+	transition: all 2s ease;
+}
+
+.scale-flex-container:hover:before {
+	width: 100%;
+    
+}
   
 .first10 {
     background: #00c17b;
-    height: 5px;
+    height: 10px;
     flex-grow: 1;
   }
 
 .first20 {
     background: #00c17b;
-    height: 5px;
+    height: 10px;
     flex-grow: 2;
   }
 
 .first30 {
     background: #00c17b;
-    height: 5px;
+    height: 10px;
     flex-grow: 3;
   }
 
 .first50 {
     background: #00c17b;
-    height: 5px;
+    height: 10px;
     flex-grow: 5;
   }
 
 .second50 {
     background: rgba(75, 74, 71, 0.3);
-    height: 5px;
+    height: 10px;
     flex-grow: 5;
   }
 
 .second70 {
     background: rgba(75, 74, 71, 0.3);
-    height: 5px;
+    height: 10px;
     flex-grow: 7;
   }
 
 .second80 {
     background: rgba(75, 74, 71, 0.3);
-    height: 5px;
+    height: 10px;
     flex-grow: 8;
   }
 
 .second90 {
     background: rgba(75, 74, 71, 0.3);
-    height: 5px;
+    height: 10px;
     flex-grow: 9;
   }
 
@@ -322,7 +361,7 @@ a {
 }
 
 .educationTitle {
-    padding-top: 45px;
+    margin-top: 45px;
     text-align: center;
     font-family: inherit;
     font-size: 2em;
@@ -331,17 +370,21 @@ a {
     margin-bottom: 40px;
 }
 
+.educationTitle:hover ~ .educationLine  {
+    border: 2px solid rgba(75, 74, 71, 0.4);
+}
+
 .educationLine {
     width: 8px;
     height: 450px;
     background-color: #fefefe;
-    border: 1px solid rgba(75, 74, 71, 0.4);;
+    border: 1px solid rgba(75, 74, 71, 0.4);
     border-radius: 20%;
     margin: 0 auto;
     margin-bottom: 10px;
     position: relative;
     font-style: inherit;
-
+    transition: all 300ms ease-in;
 }
 
 .circleGreen {
@@ -351,8 +394,10 @@ a {
     border: none;
     background-color: #00c17b;
     position: absolute;
-    
+    opacity: 0.9; 
+    transition: all 300ms ease-in;
 }
+
 
 .triangleRight {
     border: 20px solid transparent; 
@@ -382,8 +427,9 @@ a {
     width: 330px; 
     height: 150px;
     margin-left: -356px;
-    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);
     font-style: inherit;
+    transition: all 300ms ease-in;
 }
 
 .educationBlockLeft::after {
@@ -400,8 +446,8 @@ a {
     width: 330px; 
     height: 150px;
     margin-left: 34px;
-    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
-
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);
+    transition: all 300ms ease-in;
 }
 
 .educationBlockRight::after {
@@ -417,12 +463,58 @@ a {
     color: #00c17b;
     text-align: center;
     margin-top: 0;
-    padding-top: 5px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .educationBlockLeft h3, .educationBlockRight h3 {
     color: #4b4a47;
     text-align: center;
+}
+.educationBlockLeft a, .educationBlockRight a {
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+}
+
+.educationBlockLeft img, .educationBlockRight img {
+    height: 50px;
+    opacity: 0.8;
+    transition: all 200ms ease-in-out;
+}
+
+.educationBlockLeft:hover img, .educationBlockRight:hover img {
+    opacity: 1;
+}
+
+.educationBlockLeft#id1:hover ~ .circleGreen#circle1 {
+    opacity: 1;
+    border: 1px solid rgba(75, 74, 71, 0.4);
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+.educationBlockRight#id2:hover ~ .circleGreen#circle2 {
+    opacity: 1;
+    border: 1px solid rgba(75, 74, 71, 0.4);
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+.educationBlockLeft#id3:hover ~ .circleGreen#circle3 {
+    opacity: 1;
+    border: 1px solid rgba(75, 74, 71, 0.4);
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);
+}
+
+.educationBlockLeft#id1:hover {
+    border: 2px solid rgba(75, 74, 71, 0.1);
+}
+
+.educationBlockRight#id2:hover {
+    border: 2px solid rgba(75, 74, 71, 0.1);
+}
+
+.educationBlockLeft#id3:hover {
+    border: 2px solid rgba(75, 74, 71, 0.1);
 }
 
 
@@ -431,9 +523,10 @@ a {
     position: relative;
     width: 100px; 
     height: 30px;
+    margin-top: 15px;
     margin-left: 20px;
     font-style: inherit;
-    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
+    box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);
 
 }
 
@@ -452,7 +545,7 @@ a {
     width: 180px; 
     height: 20px;
     margin-left: 285px;
-    margin-top: -320px;
+    margin-top: -305px;
     font-style: inherit;
     box-shadow: 1px 1px 3px 2px rgba(0, 0, 0, 0.2);;
 
