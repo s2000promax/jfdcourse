@@ -5,6 +5,7 @@ const string = prompt('Введите строку').trim();
 //const string = 'та4г';
 //const string = 'та100г';
 //const string = 'та999г';
+// const string = '10а';
 
 const dictionary = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
 let result = '';
@@ -43,10 +44,9 @@ for (let index = 0; index < string.length; index += 1) {
 
         //Заполняем Реверсную строку
         while (foundNumber > 0) {
-          reversString +=
-            indexOfRevers < dictionary.length
-              ? dictionary[indexOfRevers]
-              : dictionary[indexOfRevers - dictionary.length].toLowerCase();
+          reversString += indexOfRevers < dictionary.length ? 
+                            dictionary[indexOfRevers] :
+                            dictionary[indexOfRevers - dictionary.length].toLowerCase();
           foundNumber -= 1;
           indexOfRevers += 1;
         }
@@ -80,11 +80,7 @@ for (let index = 0; index < string.length; index += 1) {
           indexOfForward += 1;
           if (indexOfForward > dictionary.length - 1) {
             indexOfForward = 0;
-            if (isLowerCase) {
-              isLowerCase = false;
-            } else {
-              isLowerCase = true;
-            }
+            isLowerCase = !isLowerCase;
           }
         }
         //console.log('###-forwardString:', forwardString);
@@ -133,10 +129,10 @@ const numberOfLowerCaseStringFind = Number(prompt('Введите длину д�
 const numberOfUpperCaseStringFind = Number(prompt('Введите длину для поиска подстроки в верхнем регистре').trim());
 
 //For test
-/*
-const numberOfLowerCaseStringFind = 4;
-const numberOfUpperCaseStringFind = 3;
-*/
+
+// const numberOfLowerCaseStringFind = 2;
+// const numberOfUpperCaseStringFind = 2;
+
 
 if (isNaN(numberOfLowerCaseStringFind) || isNaN(numberOfUpperCaseStringFind)) {
   alert(
@@ -160,6 +156,7 @@ if (isNaN(numberOfLowerCaseStringFind) || isNaN(numberOfUpperCaseStringFind)) {
       pos = result.indexOf(templateLowerCaseString, pos + 1);
     }
 
+    i += numberOfLowerCaseStringFind - 1;
     templateLowerCaseString = '';
   }
   //console.log('####-includesLowerCase', counterLowerCaseStrings);
@@ -180,6 +177,7 @@ if (isNaN(numberOfLowerCaseStringFind) || isNaN(numberOfUpperCaseStringFind)) {
       pos = result.indexOf(templateUpperCaseString, pos + 1);
     }
 
+    i += numberOfUpperCaseStringFind - 1;
     templateUpperCaseString = '';
   }
 
