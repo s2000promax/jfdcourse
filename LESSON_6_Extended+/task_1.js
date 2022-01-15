@@ -3,9 +3,11 @@ const string = prompt('Введите строку').trim();
 //For test
 //const string = 'тАгДеН'
 //const string = 'та4г';
-//const string = 'та100г';
+// const string = 'та9г';
 //const string = 'та999г';
-// const string = '10а';
+//const string = '10а';
+//const string = 'а9';
+// const string = 'а111';
 
 const dictionary = 'АБВГДЕЁЖЗИЙКЛМНОПРСТУФХЦЧШЩЪЫЬЭЮЯ';
 let result = '';
@@ -44,9 +46,10 @@ for (let index = 0; index < string.length; index += 1) {
 
         //Заполняем Реверсную строку
         while (foundNumber > 0) {
-          reversString += indexOfRevers < dictionary.length ? 
-                            dictionary[indexOfRevers] :
-                            dictionary[indexOfRevers - dictionary.length].toLowerCase();
+          reversString +=
+            indexOfRevers < dictionary.length
+              ? dictionary[indexOfRevers]
+              : dictionary[indexOfRevers - dictionary.length].toLowerCase();
           foundNumber -= 1;
           indexOfRevers += 1;
         }
@@ -55,7 +58,7 @@ for (let index = 0; index < string.length; index += 1) {
         result += reversString + string[index];
       } //End of if ( < 10) { }
 
-      //Если число найдено и < 10, делаем реверс символов в кол-ве foundNumber
+      //Если число найдено и >= 10, делаем реверс символов в кол-ве foundNumber
       if (foundNumber && foundNumber >= 10 && foundNumber <= 999) {
         let forwardString = ''; // Реверсная строка
         let indexOfForward = null;
@@ -83,6 +86,7 @@ for (let index = 0; index < string.length; index += 1) {
             isLowerCase = !isLowerCase;
           }
         }
+
         //console.log('###-forwardString:', forwardString);
 
         //Склеиваем результат текущий rusult + Символ после числа + forwardString
@@ -99,15 +103,72 @@ for (let index = 0; index < string.length; index += 1) {
     } //End of if ( string[index] !== undefined) { }
     else {
       //Если цифра находилась в конце строки
+      // ==========================================================Дублеж кода
+      //Если число найдено и < 10, делаем реверс символов в кол-ве foundNumber
+      if (foundNumber && foundNumber < 10) {
+        let reversString = ''; // Реверсная строка
+        let indexOfRevers = null;
+        //Определение индекса символа, расположенного за числом
+        for (let i = 0; i < dictionary.length; i += 1) {
+          if (
+            string[index] === dictionary[i] ||
+            string[index] === dictionary[i].toLowerCase()
+          ) {
+            indexOfRevers = i;
+          }
+        }
+        indexOfRevers += dictionary.length - foundNumber;
+        //console.log('###-indexOfRevers define:', indexOfRevers);
 
-      //Мы же не проходили функции )))
-      //Поэтому далее идет дублеж кода:
-      //Определяем вперёд или назад, вычисляем индекс символа отсчёта
-      //(который теперь перед числом, отличие только в этом),
-      //сравниваем со словарем и начинаем заполнение реверсной
-      //или прямой строки (с чередование LowerCase и UpperCase)
-      //всё это описано выше.
-      //Пока оставлю это так
+        //Заполняем Реверсную строку
+        while (foundNumber > 0) {
+          reversString +=
+            indexOfRevers < dictionary.length
+              ? dictionary[indexOfRevers]
+              : dictionary[indexOfRevers - dictionary.length].toLowerCase();
+          foundNumber -= 1;
+          indexOfRevers += 1;
+        }
+        //console.log('###-reversString:', reversString);
+        //Склеиваем результат текущий rusult + reversString + Символ после числа
+        result += reversString;
+      } //End of if ( < 10) { }
+
+      //Если число найдено и >= 10, делаем реверс символов в кол-ве foundNumber
+      if (foundNumber && foundNumber >= 10 && foundNumber <= 999) {
+        let forwardString = ''; // Реверсная строка
+        let indexOfForward = null;
+        //Определение индекса символа, расположенного за числом
+        for (let i = 0; i < dictionary.length; i += 1) {
+          if (
+            string[index - 1 - foundNumber.length] === dictionary[i] ||
+            string[index - 1 - foundNumber.length] ===
+              dictionary[i].toLowerCase()
+          ) {
+            indexOfForward = i + 1;
+          }
+        }
+        //console.log('###-indexOfForward define:', indexOfForward);
+
+        //Заполняем Прямую строку
+        let isLowerCase = true;
+        while (foundNumber > 0) {
+          forwardString += isLowerCase
+            ? dictionary[indexOfForward].toLowerCase()
+            : dictionary[indexOfForward];
+          foundNumber -= 1;
+          indexOfForward += 1;
+          if (indexOfForward > dictionary.length - 1) {
+            indexOfForward = 0;
+            isLowerCase = !isLowerCase;
+          }
+        }
+        //console.log('###-forwardString:', forwardString);
+
+        //Склеиваем результат текущий rusult + Символ после числа + forwardString
+        result += forwardString;
+      } //End of if ( >= 10 && <= 999) { }
+      //End of=====================================================Дублеж кода
 
       foundNumber = '';
     } //Enf of else if ( string[index] !== undefined) { }
@@ -125,14 +186,17 @@ for (let index = 0; index < string.length; index += 1) {
   }
 }
 
-const numberOfLowerCaseStringFind = Number(prompt('Введите длину для поиска подстроки в нижнем регистре').trim());
-const numberOfUpperCaseStringFind = Number(prompt('Введите длину для поиска подстроки в верхнем регистре').trim());
+const numberOfLowerCaseStringFind = Number(
+  prompt('Введите длину для поиска подстроки в нижнем регистре').trim()
+);
+const numberOfUpperCaseStringFind = Number(
+  prompt('Введите длину для поиска подстроки в верхнем регистре').trim()
+);
 
 //For test
 
 // const numberOfLowerCaseStringFind = 2;
 // const numberOfUpperCaseStringFind = 2;
-
 
 if (isNaN(numberOfLowerCaseStringFind) || isNaN(numberOfUpperCaseStringFind)) {
   alert(
