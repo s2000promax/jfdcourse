@@ -77,7 +77,7 @@ const getMathResult = (expression, formatCallback) => {
     }
   }
   //Вывод результата в консоль
-  console.log(result);
+  console.log(result); //Результат вычисления или "Ошибка"
 }
 
 getMathResult(['200', '+', 300], formatExpression); // 500
