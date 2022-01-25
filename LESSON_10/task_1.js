@@ -46,6 +46,6 @@ console.log('New array 2:', onlineUsers2);
 console.log('New array 3:', onlineUsers3);
 
 //Вывод результата
-console.log('Сейчас в онлайн следующие пользователи:', onlineUsers1.map(itemObject => itemObject.username).join(', '));
+console.log(`Сейчас в онлайн следующие пользователи: ${onlineUsers1.map(itemObject => itemObject.username).join(', ')}` );
 
 //alert(`Сейчас в онлайн следующие пользователи: ${onlineUsers1.map(itemObject => itemObject.username).join(', ')}`);
