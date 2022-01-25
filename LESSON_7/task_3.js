@@ -8,6 +8,6 @@ console.log('###-totalJuniorDevelopersSalary', totalJuniorDevelopersSalary)
 for (let i = 0; i < numberOfJuniorDevelopers; i += 1) {
     const salaryWithTax = salaryOfJuniorDeveloper-(salaryOfJuniorDeveloper*taxPercentage/100);
     totalJuniorDevelopersSalary += salaryWithTax;
-    debugger;
+    //debugger;
 }
 console.log('totalJuniorDevelopersSalary', totalJuniorDevelopersSalary);
