@@ -1,5 +1,6 @@
 const addDays = (dateObject, days = 1) => {
-  const msOfDay = 86400000; //День содержит 86 400 000 миллисекунд.
+  //const msOfDay = 86400000; //День содержит 86 400 000 миллисекунд.
+  const msOfDay = 1000 * 60 * 60 * 24; //  ms * s * m * h => day
 
   return new Date(dateObject.getTime() + days * msOfDay);
 }

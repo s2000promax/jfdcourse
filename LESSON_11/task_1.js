@@ -25,7 +25,7 @@ const getDateFormat = (dateObject, separator, format) => {
 
   separator = separator === '-' ? separator : '.'; //Определяем в каком формате оставить разделитель
 
-  //Получем одну универсальную строку для возврата из функции
+  //Получаем одну универсальную строку для возврата из функции
   return `${format(stringArrDate[d])}${separator}${format(stringArrDate[m])}${separator}${format(stringArrDate[y])}`;
 }
 

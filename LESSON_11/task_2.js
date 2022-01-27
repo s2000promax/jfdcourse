@@ -1,4 +1,4 @@
-const convertMsToDays = ms => Math.trunc(ms / 1000 / 60 / 60 / 24); //  Number / ms / s / m / h => d
+const convertMsToDays = ms => Math.trunc(ms / 1000 / 60 / 60 / 24); //  Number / ms / s / m / h => day
 
 const getDaysBeforeBirthday = (nextBirthdayDate, convertorToDays) => {
   //Для универсальности, можно устроить проверку строки на дату,
