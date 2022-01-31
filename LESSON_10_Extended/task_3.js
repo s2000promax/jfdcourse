@@ -20,7 +20,7 @@ const getKiller = (suspectInfo, deadPeople) => {
       })
     } )
   }
-  //  console.log('###- isKiller', isKiller);
+    console.log('###- isKiller', isKiller);
 
   // Анализируем результат
   // (не знаю на сколько это допустимо и как это выглядит со стороны?)
@@ -48,3 +48,14 @@ result = getKiller(
 );
 console.log('result 2:' , result);
 // Убийца Megan
+
+result = getKiller(
+  {
+    'James': ['Jacob', 'Bill', 'Lucas'],
+    'Johnny': ['Bill', 'Kyle', 'Lucas'],
+    'Peter': ['Lucy', 'Kyle'],
+  },
+  ['Lucas', 'Bill']
+);
+console.log('result 3:' , result);
+// Убийца James, Johnny

@@ -23,14 +23,14 @@ const handleObject = (obj, key, action) => {
 
 //Для корректного теста, должен быть раскомментирован только один соответствующий блок
 
-// const result1 = handleObject(student, 'programmingLanguage', 'get');
-// console.log('result1', result1);
+const result1 = handleObject(student, 'programmingLanguage', 'get');
+console.log('result1', result1);
 
-// const result2 = handleObject(student, 'salary', 'add');
-// console.log('result2', result2);
+const result2 = handleObject(student, 'salary', 'add');
+console.log('result2', result2);
 
-// const result3 = handleObject(student, 'programmingLanguage', 'delete');
-// console.log('result3', result3);
+const result3 = handleObject(student, 'programmingLanguage', 'delete');
+console.log('result3', result3);
 
 const result4 = handleObject(student, 'salary', 'reset');
 console.log('result4', result4);
