@@ -1,68 +1,53 @@
-class Developer {
-  constructor(fullName, age, position) {
-    this.fullName = fullName;
-    this.age = age;
-    this.position = position;
-    this.technologies = [];
+class Dictionary {
+  constructor(name) {
+    this.name = name;
+    this.words = {};
   }
 
-  code() {
-
+  add(word, description) {
+    this.words = !!this.get(word) ? {...this.words} : {...this.words, [word] : { word, description}};
   }
 
-  learnNewTechnology(technology) {
-    this.technologies.push(technology);
+  remove(key) {
+    delete this.words[key];
   }
-}
 
-class JuniorDeveloper extends Developer {
-  constructor(fullName, age) {
-    super(fullName, age, 'Junior');
+  get(key) {
+    return Object.keys(this.words).includes(key) ? this.words[key] : null;
   }
-  code() {
-    console.log(`${this.position} разработчик пишет код...`); //Оставим строкув таком виде, для возможного наследования
 
-    ['HTML', 'CSS', 'JavaScript'].forEach( item => this.learnNewTechnology(item)); //Может это не совсем законно, но по заднию: Массив должен содержать...
-    console.log('###-technologies', this.technologies);
+  showAllWords() {
+    Object.keys(this.words).forEach( key => console.log(`${this.words[key].word} - ${this.words[key].description}`));
   }
 }
 
-class MiddleDeveloper extends Developer {
-  constructor(fullName, age) {
-    super(fullName, age, 'Middle');
+class HardWordsDictionary extends Dictionary {
+  constructor(name) {
+    super(name);
   }
-  code() {
-    //console.log(`${this.position} разработчик пишет код...`);//Так делать нельзя - это не Полиморфизм. Можно было просто унаследовать, без переопределения
-    console.log(`Middle разработчик пишет код...`);
 
-    ['CSS', 'JavaScript', 'React'].forEach( item => this.learnNewTechnology(item)); //Может это не совсем законно, но по заднию: Массив должен содержать...
-    // console.log('###-technologies', this.technologies);
-  }
-}
-class SeniorDeveloper extends Developer {
-  constructor(fullName, age) {
-    super(fullName, age, 'Senior');
-  }
-  code() {
-    //console.log(`${this.position} разработчик пишет код...`);//Так делать нельзя - это не Полиморфизм. Можно было просто унаследовать, без переопределения
-    // console.log(`Senior разработчик пишет код...`);
-
-    ['JavaScript', 'React', 'NodeJS'].forEach( item => this.learnNewTechnology(item)); //Может это не совсем законно, но по заднию: Массив должен содержать...
-    // console.log('###-technologies', this.technologies);
+  add(word, description) {
+    this.words = !!this.get(word) ? {...this.words} : {...this.words, [word] : {
+                                                                                word,
+                                                                                description,
+                                                                                isDifficult: true,
+                                                                                }};
   }
 }
 
-const juniorDeveloper = new JuniorDeveloper('Анастасия', 20)
-const middleDeveloper = new MiddleDeveloper('Игорь', 25)
-const seniorDeveloper = new SeniorDeveloper('Максим', 30)
+const hardWordsDictionary = new HardWordsDictionary('Сложные слова');
 
-juniorDeveloper.code(); // Junior разработчик пишет код...
-middleDeveloper.code(); // Middle разработчик пишет код…
-seniorDeveloper.code(); // Senior разработчик пишет код...
+hardWordsDictionary.add('дилетант', 'Тот, кто занимается наукой или искусством без специальной подготовки, обладая только поверхностными знаниями.');
 
-console.log(juniorDeveloper.fullName, juniorDeveloper.age,
-  juniorDeveloper.position); // 'Анастасия', 20, 'Junior'
-console.log(middleDeveloper.fullName, middleDeveloper.age,
-  middleDeveloper.position); // 'Игорь', 25, 'Middle'
-console.log(seniorDeveloper.fullName, seniorDeveloper.age,
-  seniorDeveloper.position); // 'Максим', 30, 'Senior'
+hardWordsDictionary.add('неологизм', 'Новое слово или выражение, а также новое значение старого слова.');
+
+hardWordsDictionary.add('квант', 'Неделимая часть какой-либо величины в физике.');
+
+hardWordsDictionary.remove('неологизм');
+
+hardWordsDictionary.showAllWords();
+// console.log(hardWordsDictionary.words)
+
+// дилетант - Тот, кто занимается наукой или искусством
+// без специальной подготовки, обладая только поверхностными знаниями.
+// квант - Неделимая часть какой-либо величины в физике.
