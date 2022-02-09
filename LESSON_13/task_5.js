@@ -16,7 +16,7 @@ class Developer {
 }
 
 class JuniorDeveloper extends Developer {
-  constructor(fullName, age) {
+    constructor(fullName, age) {
     super(fullName, age, 'Junior');
   }
   code() {
