@@ -84,10 +84,10 @@ const tempaleForTask = ( {id, text} ) => {
   //Кастомные styles
   if (isDark) {
     //Тёмная
-    button.style.color = '1px solid #ffffff';
+    button.style.border = '1px solid #ffffff';
   } else {
     //Светлая
-    button.style.color = 'none'
+    button.style.border = 'none'
   }
 
   divMainContainer.append(divMainContent, button);
@@ -222,7 +222,7 @@ body.addEventListener('keydown', even => {
       root.style.setProperty('--checkbox-text-color', '#fff');
       root.style.setProperty('--default-border-color', '#000');
 
-      allButton.forEach( tag => tag.style.color = 'none');
+      allButton.forEach( tag => tag.style.border = 'none');
     } else {
       // console.log('To-dark');
 
@@ -237,7 +237,7 @@ body.addEventListener('keydown', even => {
       root.style.setProperty('--checkbox-text-color', '#000');
       root.style.setProperty('--default-border-color', '#fff');
 
-      allButton.forEach( tag => tag.style.color = '1px solid #ffffff');
+      allButton.forEach( tag => tag.style.border = '1px solid #ffffff');
     }
   }
 });
