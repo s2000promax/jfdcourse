@@ -125,7 +125,7 @@ class CustomSelect {
   #findTagByClassname(className, tagName, collections) {
     // Двойное предназначение метода:
     // Если className передан - то осуществляем поиск в document
-    // Если сlassName не передан, то делаем выборку тега TagName и коллекции collections
+    // Если сlassName не передан, то делаем выборку тега TagName из коллекции collections
     let findTag = null;
 
     if (!!className) {
