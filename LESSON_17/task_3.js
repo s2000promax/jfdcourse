@@ -62,11 +62,21 @@ II - этап:
     }, 500);
 
 //Консоль:
+
+//Мой вариант был такой, но пройдя тест, даю ответ ниже этого:
 'End'
 'Success'
 'user received'
 'in promise'
 undefined   --> //console.log(result); a result - это resolve('promise resolved'), а resolve ещё в очереди 3
+'last set timeout'
+
+//В консоли будет:
+'End'
+'Success'
+'user received'
+'in promise'
+'promise resolved'
 'last set timeout'
 
 // Код не запускал. (Даже после записи ответа на листочке - не запускал. Даже не создавал index.html, чтобы
