@@ -76,8 +76,9 @@ undefined   --> //console.log(result); a result - это resolve('promise resolv
 'Success'
 'user received'
 'in promise'
-'promise resolved'
 'last set timeout'
+'promise resolved'
+
 
 // Код не запускал. (Даже после записи ответа на листочке - не запускал. Даже не создавал index.html, чтобы
 // небыло соблазна запустить браузерные функции...)
