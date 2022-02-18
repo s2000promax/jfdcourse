@@ -176,11 +176,11 @@ const renderPost = (postId) => {
           hideLoader(); // удаляем всё loader-ы
         })
         .catch( (error) => {
-          console.log('###-error in comments', error);
+          console.error('###-error in comments', error);
         })
     })
     .catch( (error) => {
-      console.log('###-error in post', error);
+      console.error('###-error in post', error);
     })
 }
 
