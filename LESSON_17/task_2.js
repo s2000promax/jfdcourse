@@ -41,9 +41,10 @@ setTimeout(() => {
 //Консоль:
 'before promise'
 'One'
-'Zero Promise Invoked'
+'Zero Promise Invoked' --не верно!
 'Zero'
 'Zero Promise'
+'Zero Promise Invoked'
 
 // Код не запускал. (Даже после записи ответа на листочке - не запускал)
  */

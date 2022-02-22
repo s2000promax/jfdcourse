@@ -173,15 +173,18 @@ const renderPost = (postId) => {
           console.log(`###-comments-postId-${comments[0].postId}`, comments);
 
           createListComments(comments);
-          hideLoader(); // удаляем всё loader-ы
         })
         .catch( (error) => {
           console.error('###-error in comments', error);
-        })
+        });
+
     })
     .catch( (error) => {
       console.error('###-error in post', error);
     })
+    .finally( () => {
+      hideLoader(); // удаляем всё loader-ы
+    });
 }
 
 renderPost(1);
