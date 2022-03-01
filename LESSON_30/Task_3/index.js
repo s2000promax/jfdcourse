@@ -18,3 +18,8 @@ const unique = (array = []) => {
 console.log(unique()); // => null
 console.log(unique([1, 1, 2, 2, 4, 2, 3, 7, 3])); // => [1, 2, 4, 3, 7]
 console.log(unique([3])); // => [3]
+
+// With Set
+const uniqueSet = array => [...new Set(array)];
+console.log(uniqueSet([1, 1, 2, 2, 4, 2, 3, 7, 3])); // => [1, 2, 4, 3, 7]
+console.log(uniqueSet()); // => []
