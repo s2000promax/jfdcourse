@@ -1,31 +1,35 @@
 import React, {useState} from "react";
 
-const Counter = () => {
-  const [counter, setCounter] = useState(0);
+const Counter = (props) => {
+  console.log(props);
 
-  const formatCount = () => {
-    return counter === 0 ? 'empty' : counter;
+  const [value, setValue] = useState(props.value);
+
+  const formatValue = () => {
+    return value === 0 ? 'empty' : value;
 
   }
 
   const getBadgeClasses = () => {
-    return counter === 0 ? 'badge m-2 btn-warning' : 'badge m-2 btn-primary';
+    return value === 0 ? 'badge m-2 btn-warning' : 'badge m-2 btn-primary';
   }
 
   const handleIncrement = () => {
-    setCounter((prevState) => prevState + 1);
+    setValue((prevState) => prevState + 1);
   }
 
   const handleDecrement = () => {
-    setCounter((prevState) => prevState - 1);
+    setValue((prevState) => prevState - 1);
   }
 
   return (
-    <React.Fragment>
-      <span className={getBadgeClasses()}>{formatCount()}</span>
+    <div>
+      <span>{props.name}</span>
+      <span className={getBadgeClasses()}>{formatValue()}</span>
       <button className='btn btn-primary btn-sm m-2' onClick={handleIncrement}>+</button>
       <button className='btn btn-primary btn-sm m-2' onClick={handleDecrement}>-</button>
-    </React.Fragment>
+      <button className="btn btn-danger btn-sm m-2" onClick={ () => props.onDelete(props.id)}>Delete</button>
+    </div>
   );
 }
 
