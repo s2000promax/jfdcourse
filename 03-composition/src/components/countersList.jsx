@@ -18,6 +18,7 @@ const CountersList = () => {
       if (item.id === id) {
         item.value += 1;
       }
+
       return item;
     }));
   }
@@ -28,7 +29,7 @@ const CountersList = () => {
         if (!!item.value) {
           item.value -= 1
         }
-        ;
+
       }
       return item;
     }));
@@ -42,18 +43,21 @@ const CountersList = () => {
     setCounters(initialState);
   }
 
-  return <>
-    {counters
-      .map(counter => <Counter
-          key={counter.id}
-          onDelete={handleDelete}
-          onIncrement={handleIncrement}
-          onDecrement={handleDecrement}
-          {...counter}
-        />
-      )}
-    <button className="btn btn-primary btn-sm m-2" onClick={handleReset}>Reset</button>
-  </>
+  return (
+    <>
+      {counters
+        .map(counter =>
+          <Counter
+            key={counter.id}
+            onDelete={handleDelete}
+            onIncrement={handleIncrement}
+            onDecrement={handleDecrement}
+            {...counter}
+          />
+        )}
+      <button className="btn btn-primary btn-sm m-2" onClick={handleReset}>Reset</button>
+    </>
+  );
 }
 
 export default CountersList;
