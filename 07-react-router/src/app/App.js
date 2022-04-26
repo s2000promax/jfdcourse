@@ -3,7 +3,6 @@ import Dashboard from './componets/dashboard';
 import NavBar from './componets/navBar';
 import Login from './componets/login';
 import Home from './componets/home';
-import Stats from './componets/stats';
 import Posts from './componets/posts';
 import NotFound from './componets/notFound';
 
@@ -14,7 +13,6 @@ function App() {
       <h1>App</h1>
       <Switch>
         <Route path='/' exact component={Home}/>
-        <Route path='/dashboard/stats' component={Stats}/>
         <Route path='/dashboard' component={Dashboard}/>
         <Route path='/login' component={Login}/>
         <Route
